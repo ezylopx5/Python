@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "../../Desktop/CS50-Python/PY"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../../Desktop/CS50-Python"
+		},
+		{
+			"path": "../../Desktop/VS-CODE"
+		}
+	],
+	"settings": {},
+	"extensions": {
+		"recommendations": [
+			"hediet.debug-visualizer"
+		]
+	}
+}
