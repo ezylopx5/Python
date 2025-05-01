@@ -1,0 +1,153 @@
+<!-- {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌍Aspersion</title>
+    <style>
+        body{
+
+            background-image:url('{% static "images/AI.jpg" %}');
+            background-size: cover;
+
+            .container{
+                align-self: center;
+                background-color: transparent;
+                display: flex;
+            }
+            
+            .send{
+                background-color: rgb(4, 4, 240);
+            }
+
+
+
+
+
+
+
+
+
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="chatbox">
+
+            {% if users_message %}
+            <div class="message">You: {{ users_message }}</div>
+            <output>You: {{ users_message }}</output>
+
+            {% endif %}
+            {% if reply %}
+            <div class="response">aspersion: {{ reply }}</div>
+            {% endif %}
+
+        </div>
+        <form method="POST" class="form">
+            {% csrf_token %}
+            <input type="text" name="users_message%" placeholder="Talk to me!😇" required>
+            <button class="send" type="submit">Send➡️</button>
+
+
+
+        </form>
+    </div>
+    
+</body>
+</html> -->
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌍Aspersion</title>
+  <style>
+    body {
+      background-image: url('{% static "images/AI.jpg" %}');
+      background-size: cover;
+      background-repeat: no-repeat;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: white;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 100px auto;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 15px;
+    }
+
+    .chatbox {
+      margin-bottom: 20px;
+    }
+
+    .message, .response {
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+    }
+
+    .message {
+      background-color: #4caf50;
+      text-align: right;
+    }
+
+    .response {
+      background-color: #2196f3;
+      text-align: left;
+    }
+
+    .form {
+      display: flex;
+    }
+
+    input[type="text"] {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 5px 0 0 5px;
+      font-size: 16px;
+    }
+
+    button.send {
+      padding: 10px 20px;
+      background-color: rgb(4, 4, 240);
+      color: white;
+      border: none;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="chatbox">
+   
+    </div>
+
+    <form method="POST" class="form">
+      {% csrf_token %}
+      <input type="text" name="users_resposnd" placeholder="Talk to me! 😇" required>
+      <button class="send" type="submit">Send ➡️</button>
+    </form>
+    {% if users_message %}
+    <div class="message">You: {{ users_message }}</div>
+  {% endif %}
+  
+  {% if reply %}
+    <div class="response">Aspersion: {{ reply }}</div>
+  {% endif %}
+  
+  </div>
+</body>
+</html>
